@@ -14,6 +14,20 @@ document.querySelectorAll("#nav li").forEach(function(navEl) {
   };
 });
 
+document.querySelectorAll(".disable-navigation").forEach(function(el) {
+  el.onclick = function (e) {
+    e.preventDefault();
+  }
+});
+
+var div = document.getElementById('alarm');
+var counter = 0;
+setInterval(function () {
+  div.innerText = 'Your changes were saved - ' + counter;
+  counter++;
+}, 60000);
+
+
 function toggleTab(selectedNav, targetId) {
   var navEls = document.querySelectorAll("#nav li");
 
